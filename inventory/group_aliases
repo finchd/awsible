@@ -1,0 +1,8 @@
+[eks_workers]
+tag_aws_autoscaling_groupName_eks_vpc_cfn_workers1_NodeGroup_18ZQBN2LKWJIG
+
+[kops_workers]
+key_kubernetes_example_cluster_k8s_local_11_75_cc_67_7f_02_62_99_0a_5d_29_3d_55_b3_8b_6b
+
+
+[windows]\nplatform_windows

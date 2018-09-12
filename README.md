@@ -29,3 +29,7 @@ As much Ansible and as little raw Python as possible, but do it right: unit test
 
 Q. Why not CloudFormation?
 A. I would still want a templating system to build them for me, and run them across regions, but Ansible can do the "run on everything"/pssh/sshuttle orchestration and CloudFormation can't
+
+# References
+
+[ec2-vpc-example.yml]( https://github.com/ansiblebook/ansiblebook/blob/1st-edition/ch12/playbooks/ec2-vpc-example.yml )

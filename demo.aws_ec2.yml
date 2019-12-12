@@ -1,0 +1,40 @@
+# demo.aws_ec2.yml
+plugin: aws_ec2
+cache: yes
+regions: #[] #use all public regions, excludes us-gov-*-* and cn-*-*
+  - us-east-1
+#  - us-east-2
+keyed_groups:
+  # add hosts to tag_Name_value groups for each aws_ec2 host's tags.Name variable
+  - key: tags.Name
+    prefix: tag_Name_
+    separator: ""
+  # Create a group per region e.g. aws_region_us_east_2
+  - key: placement.region
+    prefix: aws_region
+  # Add hosts to e.g. instance_type_z3_tiny
+  - prefix: instance_type
+    key: instance_type
+  # Add hosts to tag_Key groups for each Key/Value tag pair
+  - prefix: tag
+    key: tags
+#groups:
+  # add hosts to the group development if any of the dictionary's keys or values is the word 'devel'
+#  development: "'devel' in (tags|list)"
+
+# precedence list for the inventory hostname, accepts any options in aws-cli --filters 
+# Note: I(hostnames) sets the inventory_hostname. To modify ansible_host without modifying
+# # inventory_hostname use compose (see example below).
+hostnames:
+  # use the Name tag
+  #- tag:Name
+  # 
+  - dns-name
+  #  
+  #- instance-id
+  # 
+  #- private-ip-address
+
+compose:
+  # set the ansible_host variable to connect with the private IP address without changing the hostname
+  ansible_host: ip_address 

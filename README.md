@@ -33,3 +33,6 @@ A. I would still want a templating system to build them for me, and run them acr
 # References
 
 [ec2-vpc-example.yml]( https://github.com/ansiblebook/ansiblebook/blob/1st-edition/ch12/playbooks/ec2-vpc-example.yml )
+
+
+NOTE: ansible inventory has drastically changed, instead use a yaml file to provide config for a new built-in aws_ec2 plugin, and see the results with `ansible-inventory -i demo.aws_ec2.yml --graph`

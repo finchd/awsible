@@ -1,8 +1,11 @@
-https://raw.githubusercontent.com/ansible/ansible/stable-2.5/contrib/inventory/ec2.ini
-https://raw.githubusercontent.com/ansible/ansible/stable-2.5/contrib/inventory/ec2.py
+#!/usr/bin/env bash
+# download these, and put them in place
+#https://raw.githubusercontent.com/ansible/ansible/stable-2.5/contrib/inventory/ec2.ini
+#https://raw.githubusercontent.com/ansible/ansible/stable-2.5/contrib/inventory/ec2.py
 
 export EC2_INI_PATH=~/ec2.ini
 export ANSIBLE_INVENTORY=~/bin/ec2.py
 
-ansible -u ec2-user "key_kubernetes_example_cluster_k8s_local_11_75_cc_67_7f_02_62_99_0a_5d_29_3d_55_b3_8b_6b" --private-key=~/.ssh/kops
-ansible-console -u ec2-user "tag_elasticbeanstalk_environment_name_Default_Environment" --private-key ~/.ssh/ohio-devbox.pem
+# examples
+echo 'ansible -u ec2-user "key_kubernetes_example_cluster_k8s_local_11_75_cc_67_7f_02_62_99_0a_5d_29_3d_55_b3_8b_6b" --private-key=~/.ssh/kops'
+echo 'ansible-console -u ec2-user "tag_elasticbeanstalk_environment_name_Default_Environment" --private-key ~/.ssh/ohio-devbox.pem'
